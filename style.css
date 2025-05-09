@@ -1,0 +1,71 @@
+/* styles.css */
+
+/* Base colors inspired by cybersecurity themes */
+:root {
+  --primary-color: #217eaa; /* Deep blue */
+  --secondary-color: #7d9cb7; /* Muted blue */
+  --accent-color: #00aeff; /* Bright accent blue */
+  --background-color: #f2f2f3; /* Light gray background */
+  --text-color: #000f5c; /* Dark blue text */
+  --correct-color: #28a745; /* Green for correct answers */
+  --incorrect-color: #dc3545; /* Red for incorrect answers */
+  --warning-color: #ffc107; /* Amber for warnings */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(33, 126, 170, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="radio"] {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+#feedback {
+  font-weight: bold;
+  margin-top: 20px;
+}

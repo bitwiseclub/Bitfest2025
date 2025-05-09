@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Question 6</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="q-title">Question 6</h1>
+    <p id="question-text">I'm a silent creep, I hide, control your system, try to reside</p>
+<form id="quiz-form"><label>
+        <input type="radio" name="answer" value="Virus" />
+        <span class="option-text">Virus</span>
+      </label><br /><label>
+        <input type="radio" name="answer" value="Rootkit" />
+        <span class="option-text">Rootkit</span>
+      </label><br /><label>
+        <input type="radio" name="answer" value="Backdoor" />
+        <span class="option-text">Backdoor</span>
+      </label><br /><label>
+        <input type="radio" name="answer" value="Worm" />
+        <span class="option-text">Worm</span>
+      </label><br /><br /><button type="button" onclick="checkAnswer()" id="submit-btn">Submit</button></form>
+    <p id="feedback"></p>
+  </div>
+  <div class="lang-toggle" style="text-align:center;margin-top:20px;">
+    <button onclick="switchLanguage()">عربي / English</button>
+  </div>
+  <script>
+    let currentLang = "en";
+    const correctAnswer = "rootkit";
+
+    const translations = {
+      en: {
+        title: "Question 6",
+        question: "I'm a silent creep, I hide, control your system, try to reside",
+        placeholder: "Your answer",
+        submit: "Submit",
+        correct: "✅ Correct!",
+        wrong: "❌ Incorrect. Try again."
+      },
+      ar: {
+        title: "السؤال ٦",
+        question: "أنا أتسلل بصمت، أختبئ وأتحكم في نظامك، أحاول البقاء.",
+        placeholder: "أدخل الإجابة هنا",
+        submit: "إرسال",
+        correct: "✅ إجابة صحيحة!",
+        wrong: "❌ إجابة خاطئة، حاول مرة أخرى."
+      }
+    };
+
+    function switchLanguage() {
+      currentLang = currentLang === "en" ? "ar" : "en";
+      const t = translations[currentLang];
+      document.getElementById('q-title').textContent = t.title;
+      document.getElementById('question-text').textContent = t.question;
+      document.getElementById('submit-btn').textContent = t.submit;
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    }
+
+    function checkAnswer() {
+      let userAnswer;
+      if (document.getElementById('answer-input')) {
+        userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
+      } else {
+        const radios = document.querySelectorAll('input[name="answer"]');
+        radios.forEach(r => { if (r.checked) userAnswer = r.value.toLowerCase(); });
+      }
+
+      const feedback = document.getElementById('feedback');
+      const t = translations[currentLang];
+
+      if (userAnswer === correctAnswer) {
+        feedback.textContent = t.correct;
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = t.wrong;
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

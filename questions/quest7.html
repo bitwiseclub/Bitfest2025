@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Question 7</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="q-title">Question 7</h1>
+    <p id="question-text">I sign my emails digitally to prove, that they come from me and not a spoof. What am I?</p>
+<input type="text" id="answer-input" placeholder="Your answer" />
+    <button onclick="checkAnswer()" id="submit-btn">Submit</button>
+    <p id="feedback"></p>
+  </div>
+  <div class="lang-toggle" style="text-align:center;margin-top:20px;">
+    <button onclick="switchLanguage()">عربي / English</button>
+  </div>
+  <script>
+    let currentLang = "en";
+    const correctAnswer = "digital signature";
+
+    const translations = {
+      en: {
+        title: "Question 7",
+        question: "I sign my emails digitally to prove, that they come from me and not a spoof. What am I?",
+        placeholder: "Your answer",
+        submit: "Submit",
+        correct: "✅ Correct!",
+        wrong: "❌ Incorrect. Try again."
+      },
+      ar: {
+        title: "السؤال ٧",
+        question: "أوقع رسائلي الإلكترونية رقميًا لإثبات أنها مني وليست مزيفة. من أنا؟",
+        placeholder: "أدخل الإجابة هنا",
+        submit: "إرسال",
+        correct: "✅ إجابة صحيحة!",
+        wrong: "❌ إجابة خاطئة، حاول مرة أخرى."
+      }
+    };
+
+    function switchLanguage() {
+      currentLang = currentLang === "en" ? "ar" : "en";
+      const t = translations[currentLang];
+      document.getElementById('q-title').textContent = t.title;
+      document.getElementById('question-text').textContent = t.question;
+      document.getElementById('submit-btn').textContent = t.submit;
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    }
+
+    function checkAnswer() {
+      let userAnswer;
+      if (document.getElementById('answer-input')) {
+        userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
+      } else {
+        const radios = document.querySelectorAll('input[name="answer"]');
+        radios.forEach(r => { if (r.checked) userAnswer = r.value.toLowerCase(); });
+      }
+
+      const feedback = document.getElementById('feedback');
+      const t = translations[currentLang];
+
+      if (userAnswer === correctAnswer) {
+        feedback.textContent = t.correct;
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = t.wrong;
+        feedback.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

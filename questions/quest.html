@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hidden Flag Challenge</title>
+   <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  margin-top: 80px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hint {
+    display: blobk;
+  margin-top: 20px;
+  background-color: #e7f1ff;
+  border: 1px solid #c3e0f7;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 600px;
+}
+
+.lang-toggle {
+  margin-top: auto;
+  padding: 30px 0;
+}
+
+.lang-toggle button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.lang-toggle button:hover {
+  background-color: #0056b3;
+}
+
+   </style>
+  <script>
+    const translations = {
+      en: {
+        title: "Welcome to the Hidden Flag Challenge!",
+        description: "Can you find the hidden flag in the page source code?",
+        instruction: "To solve this challenge, inspect the HTML source code. The flag is hidden there!",
+        hintTitle: "Hint:",
+        hintText: "I might help",
+        langToggle: "عربي"
+      },
+      ar: {
+        title: "مرحباً بك في تحدي العلم المخفي!",
+        description: "هل يمكنك العثور على العلم المخفي في كود الصفحة المصدرية؟",
+        instruction: "لحل هذا التحدي، تحقق من الكود المصدري لصفحة HTML",
+        hintTitle: "تلميح:",
+        hintText:"يمكنني مساعدتك",
+        langToggle: "English"
+      }
+    };
+
+    let currentLang = "en";
+
+    function switchLanguage() {
+      currentLang = currentLang === "en" ? "ar" : "en";
+      const t = translations[currentLang];
+
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("description").textContent = t.description;
+      document.getElementById("instruction").textContent = t.instruction;
+      document.getElementById("hint-title").textContent = t.hintTitle;
+      document.getElementById("hint-text").textContent = t.hintText;
+      document.getElementById("lang-btn").textContent = t.langToggle;
+
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Welcome to the Hidden Flag Challenge!</h1>
+    <p id="description">Can you find the hidden flag in the page source code?</p>
+    <p id="instruction">To solve this challenge, inspect the HTML source code. The flag is hidden there!</p>
+  </div>
+    <!-- flag{you found it} -->
+  <div class="hint">
+    <h3 id="hint-title">Hint:</h3>
+    <a href="http://view-page-source.com" id="hint-text">I might help</a>
+  </div>
+
+  <div class="lang-toggle">
+    <button id="lang-btn" onclick="switchLanguage()">عربي</button>
+  </div>
+
+  
+
+</body>
+</html>
