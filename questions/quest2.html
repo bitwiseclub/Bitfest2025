@@ -47,19 +47,19 @@
 <body>
   <div class="container">
     <h1 id="q-title">Question 2</h1>
-    <p id="question-text">what is used to verify your identity online ?</p>
+    <p id="question-text">what is used to verify the identity of a user or a system online ?</p>
     <form id="quiz-form">
       <label class="option-label">
-        <input type="radio" name="answer" value="Password" />
-        <span id="opt1-text">Password</span>
+        <input type="radio" name="answer" value="Authentication" />
+        <span id="opt1-text">Authentication</span>
       </label>
       <label class="option-label">
         <input type="radio" name="answer" value="firewall" />
-        <span id="opt2-text">firewall</span>
+        <span id="opt2-text">Firewall</span>
       </label>
       <label class="option-label">
         <input type="radio" name="answer" value="algorithm" />
-        <span id="opt3-text">algorithm</span>
+        <span id="opt3-text">Algorithm</span>
       </label>
       <br>
       <button type="button" onclick="checkAnswer()" id="submit-btn">Submit</button>
@@ -72,15 +72,15 @@
   </div>
 
   <script>
-    const correctAnswer = "Password";
+    const correctAnswer = "Authentication";
     let currentLang = "en";
 
     const translations = {
       en: {
         title: "Question 2",
-        question: "What is used to verify your identity online?",
+        question: "what is used to verify the identity of a user or a system online ?",
         options: [
-          "Password",
+          "Authentication",
           "Firewall",
           "Algorithm",
 
@@ -93,9 +93,9 @@
         title: "السؤال 2",
         question: "ما الذي يُستخدم للتحقق من هويتك عبر الإنترنت؟",
         options: [
-          "كلمة المرور",
-          "جدار الحماية",
-          "خوارزمية",
+          "Authentication",
+          "Firewall",
+          "Algorithm",
 
         ],
         submit: "إرسال",

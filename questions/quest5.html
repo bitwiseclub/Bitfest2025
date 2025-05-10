@@ -18,7 +18,7 @@
   </div>
   <script>
     let currentLang = "en";
-    const correctAnswer = "bitfest";
+    const correctAnswer = "bitfest with bitwise";
 
     const translations = {
       en: {
@@ -48,11 +48,12 @@
       document.documentElement.lang = currentLang;
       document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
     }
-
+    
     function checkAnswer() {
       let userAnswer;
       if (document.getElementById('answer-input')) {
         userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
+        console.log(userAnswer)
       } else {
         const radios = document.querySelectorAll('input[name="answer"]');
         radios.forEach(r => { if (r.checked) userAnswer = r.value.toLowerCase(); });

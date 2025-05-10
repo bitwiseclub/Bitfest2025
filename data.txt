@@ -1,0 +1,56 @@
+crack the cyber code !
+
+
+Objective: participant walk through the campus scanning qr codes to different cybersecurity challenges( these challenges can be completely completed using smartphones) 
+mentality : solved a challenge --> win a prize
+
+!!! Beginner level :
+1-base 64 decoding : "ZmxhZ3t0aGlzX2lzX2Jhc2U2NH0=" --> flag{this_is_base64} 
+2-what is used to verify your identity online ?
+	password-----
+	firewall
+	algorithm
+3-I scramble your data to keep it safe from prying eyes.What am i?
+	encryption-----
+	vpn
+	authentication
+4-I’m the password’s smarter sibling, an extra step to keep bad guys from slipping. What am I? 2FA
+5-I am a secret phrase that you must remember, used to unlock access, like a digital member. What am I?
+Answer: Password
+6-I am the secret key you must know, to unlock the data flow. What am I?
+Answer: Decryption key
+7-I use the same key to encrypt and decrypt, ensuring data remains kept. What am I?
+Answer: Symmetric encryption
+
+!!! Intermediate level:
+8- Caesar Cipher Decryption: <message tkon esm event >
+9- I'm a silent creep,  i hide, control your system, try to reside
+	virus
+	rootkit-----
+	backdoor
+10-I sign my emails digitally to prove, that they come from me and not a spoof. What am I?
+Answer: Digital signature
+11-hidden flag in page source : they have to inspect the html source code :
+<!-- flag{hidden_in_source} --
+12-I help you log in without typing a word, using fingerprints or faces unheard. What am I?
+Answer: Biometric authentication
+13-I pretend to be someone you know, to trick you into letting information flow. What am I?
+Answer: Social engineering
+!!! Advanced level:
+14- sqli
+15- xss
+16- deepfake detection :
+scenario :  Participants are presented with a series of audio some of which are deepfakes.
+17-I lock your files and demand a fee, unless you want to lose your key. What am I?Ransomware
+18-I spread like wildfire, infecting everything in sight, taking down your files with a bite. What am I?Computer Virus
+19-I hide in plain sight, pretending to be legit, to catch you off guard with my counterfeit. What am I? phishing site
+
+
+
+
+
+type of content:
+1- who am i
+2- choose the correct answer
+
+
