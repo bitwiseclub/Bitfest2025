@@ -93,11 +93,11 @@
   <div class="big-container">
     <div class="container">
       <div class="face">
-        <h1 id="q-title">Concurrency Bug</h1>
+        <h1 id="q-title">Use-After-Free</h1>
         <img src="../bitWise.jpg" alt="bitwise">
       </div>
       <div class="back">
-        <p id="definition-text">A broad category of bugs caused by improper handling of concurrent operations, including race conditions, deadlocks, and atomicity violations</p>
+        <p id="definition-text">A memory corruption bug where a program continues to use memory after it has been freed, potentially leading to arbitrary code execution</p>
         <div class="lang-toggle">
           <button onclick="switchLanguage()">عربي / English</button>
         </div>  
@@ -110,13 +110,13 @@
 
     const translations = {
       en: {
-        title: "Concurrency Bug",
-        definition: "A broad category of bugs caused by improper handling of concurrent operations, including race conditions, deadlocks, and atomicity violations",
+        title: "Use-After-Free",
+        definition: " A memory corruption bug where a program continues to use memory after it has been freed, potentially leading to arbitrary code execution",
  
       },
       ar: {
-        title: "Concurrency Bug",
-        definition: " فئة واسعة من الأخطاء الناتجة عن التعامل غير السليم مع العمليات المتزامنة، بما في ذلك حالات السباق والجمود والانتهاكات الذرية",
+        title: "Use-After-Free",
+        definition: "خطأ في تلف الذاكرة حيث يستمر البرنامج في استخدام الذاكرة بعد تحريرها، مما قد يؤدي إلى تنفيذ تعليمات برمجية عشوائية",
        
       }
     };
